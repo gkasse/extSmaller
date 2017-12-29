@@ -3,6 +3,11 @@ package resolver
 import (
 	logger "github.com/sirupsen/logrus"
 	"image"
+	// Using for analyze file header
+	_ "golang.org/x/image/bmp"
+	_ "image/gif"
+	_ "image/jpeg"
+	_ "image/png"
 	"os"
 	"path/filepath"
 	"strings"
@@ -12,8 +17,11 @@ const (
 	replaceTarget = "_large"
 )
 
+// ExtensionResolver will amend of file extension
 type ExtensionResolver struct{}
 
+// Resolve will remove 'large'
+// when that file is image (e.g. bmp, jpg, gif or png) and extension contains 'large'
 func (r ExtensionResolver) Resolve(directory string, filename string) error {
 	available, e := r.Available(directory, filename)
 	if e != nil {
@@ -45,6 +53,7 @@ func (r ExtensionResolver) Resolve(directory string, filename string) error {
 	return nil
 }
 
+// Available will check that file is image (e.g. bmp, jpg, gif or png) and extension contains 'large'
 func (r ExtensionResolver) Available(directory string, filename string) (bool, error) {
 	isImage, e := r.isImage(directory, filename)
 	if e != nil {

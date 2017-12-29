@@ -4,14 +4,11 @@ import (
 	"github.com/gkasse/extSmaller/internal/resolver"
 	logger "github.com/sirupsen/logrus"
 	"go.uber.org/zap"
-	_ "golang.org/x/image/bmp"
-	_ "image/gif"
-	_ "image/jpeg"
-	_ "image/png"
 	"io/ioutil"
 	"os"
 )
 
+// Cli is core function for pull out of 'large' in filename extension
 func Cli(path *string) {
 	filepathResolver := resolver.FilepathResolver{}
 	directory := filepathResolver.Resolve(*path)
@@ -41,11 +38,11 @@ func Cli(path *string) {
 			continue
 		}
 
-		logger.Debug("Start extension resolving.", zap.String("filename", filename))
+		logger.Debug("Start extension resolving. filename: ", filename)
 		e = extensionResolver.Resolve(directory, filename)
 		if e != nil {
 			logger.Error("Could not resolving extension.", e)
 		}
-		logger.Info("Complete.", map[string]string{"filename before resolve": filename})
+		logger.Info("Complete. filename before resolve: ", filename)
 	}
 }

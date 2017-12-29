@@ -1,11 +1,11 @@
 package resolver
 
 import (
-	"os"
-	"strings"
-	"path/filepath"
-	"os/user"
 	logger "github.com/sirupsen/logrus"
+	"os"
+	"os/user"
+	"path/filepath"
+	"strings"
 )
 
 const (

@@ -1,15 +1,15 @@
 package internal
 
 import (
+	"github.com/gkasse/extSmaller/internal/resolver"
+	logger "github.com/sirupsen/logrus"
+	"go.uber.org/zap"
+	_ "golang.org/x/image/bmp"
 	_ "image/gif"
 	_ "image/jpeg"
 	_ "image/png"
-	_ "golang.org/x/image/bmp"
-	"go.uber.org/zap"
-	"os"
 	"io/ioutil"
-	"github.com/gkasse/extSmaller/internal/resolver"
-	logger "github.com/sirupsen/logrus"
+	"os"
 )
 
 func Cli(path *string) {

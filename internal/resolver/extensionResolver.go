@@ -1,11 +1,11 @@
 package resolver
 
 import (
+	logger "github.com/sirupsen/logrus"
+	"image"
 	"os"
 	"path/filepath"
 	"strings"
-	"image"
-	logger "github.com/sirupsen/logrus"
 )
 
 const (

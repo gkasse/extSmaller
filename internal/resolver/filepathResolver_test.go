@@ -1,8 +1,8 @@
 package resolver
 
 import (
-	"testing"
 	"github.com/sirupsen/logrus"
+	"testing"
 )
 
 func TestFilepathResolver_Resolve(t *testing.T) {

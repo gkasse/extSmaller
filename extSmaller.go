@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/gkasse/extSmaller/internal"
 	"flag"
+	"github.com/gkasse/extSmaller/internal"
 	logger "github.com/sirupsen/logrus"
 )
 

@@ -3,7 +3,6 @@ package internal
 import (
 	"github.com/gkasse/extSmaller/internal/resolver"
 	logger "github.com/sirupsen/logrus"
-	"go.uber.org/zap"
 	"io/ioutil"
 	"os"
 )

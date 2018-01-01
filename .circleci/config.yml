@@ -14,4 +14,4 @@ jobs:
           name: Resolving dependency
           command: |
             dep ensure
-      - run: go test -v ./...
+      - run: go test -v $(go list ./...)

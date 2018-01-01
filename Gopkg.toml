@@ -1,4 +1,4 @@
-required = ["golang.org/x/text"]
+required = ["golang.org/x/tools", "golang.org/x/text"]
 
 [[constraint]]
   name = "go.uber.org/zap"

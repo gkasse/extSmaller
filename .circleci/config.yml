@@ -3,15 +3,15 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.8
-    working_directory: /go/src/github.com/
+    working_directory: /go/src/github.com/${CIRCLE_PROJECT_USERNAME}/{CIRCLE_PROJECT_REPONAME}
     steps:
+      - run: pwd
       - run:
           name: Install dep
           command: |
             go get -u github.com/golang/dep/cmd/dep
       - checkout
-      - run:
-          command: pwd
+      - run: pwd
       - run: 
           name: Resolving dependency
           command: |

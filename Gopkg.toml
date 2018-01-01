@@ -1,5 +1,3 @@
-# required = ["golang.org/x/tools/go/buildutil", "golang.org/x/text"]
-
 [[constraint]]
   name = "go.uber.org/zap"
   version = "1.7.1"

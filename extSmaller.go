@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/gkasse/extSmaller/internal"
+	"github.com/gkasse/extSmaller/cmd"
 	logger "github.com/sirupsen/logrus"
 )
 
@@ -19,5 +19,5 @@ func main() {
 	logger.Debug("Input value", map[string]string{"d": *path})
 	logger.Debug("Input value", map[string]bool{"x": *debug})
 
-	internal.Cli(path)
+	cmd.Cli(path)
 }

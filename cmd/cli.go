@@ -1,7 +1,7 @@
-package internal
+package cmd
 
 import (
-	"github.com/gkasse/extSmaller/internal/resolver"
+	"github.com/gkasse/extSmaller/resolver"
 	logger "github.com/sirupsen/logrus"
 	"io/ioutil"
 	"os"

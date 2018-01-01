@@ -2,19 +2,19 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.8
-    working_directory: /go/src/github.com/${CIRCLE_PROJECT_USERNAME}/{CIRCLE_PROJECT_REPONAME}
+      - image: golang:1.9.2
+    working_directory: /go/src/github.com/gkasse/extSmaller
     steps:
-      - run: pwd
       - run:
           name: Install dep
           command: |
             go get -u github.com/golang/dep/cmd/dep
       - checkout
-      - run: pwd
       - run: 
           name: Resolving dependency
           command: |
             dep ensure
-      - run: go list ./...
-      - run: go test -v $(go list ./...)
+      - run:
+          name: Do test
+          command: |
+            go test -v $(go list ./...)

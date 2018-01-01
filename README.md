@@ -1,6 +1,7 @@
 # extSmaller
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/gkasse/extSmaller)](https://goreportcard.com/report/github.com/gkasse/extSmaller)
+[![CircleCI](https://circleci.com/gh/gkasse/extSmaller/tree/master.svg?style=svg)](https://circleci.com/gh/gkasse/extSmaller/tree/master)
 
 extSmaller is tool for remove 'large' in file extension such as image that download in Twitter.
 

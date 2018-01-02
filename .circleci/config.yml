@@ -18,3 +18,9 @@ jobs:
           name: Do test
           command: |
             go test -v $(go list ./...)
+      - run:
+          name: Build for mac
+          command: |
+           GOOS=darwin GOARCH=amd64 go build extSmaller.go
+      - store_artifacts:
+          path: ./extSmaller

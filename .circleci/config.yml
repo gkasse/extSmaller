@@ -8,18 +8,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - source-{{ checksum "Gopkg.toml" }}
-            - source-
-      - run:
-          name: Add GOPATH
-          command: |
-            ls -al /go/src
+            - vendor-v1-{{ checksum "Gopkg.toml" }}
+            - vendor-v1-
       - run:
           name: Initialization
           command: |
             make init
       - save_cache:
-          key: source-{{ checksum "Gopkg.toml" }}
+          key: vendor-v1-{{ checksum "Gopkg.toml" }}
           paths: 
             - "./vendor"
       - run:

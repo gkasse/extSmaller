@@ -8,6 +8,7 @@ jobs:
       - restore_cache:
           keys:
             - source-{{ checksum "Gopkg.toml" }}
+            - source-
       - checkout
       - run:
           name: Initialization

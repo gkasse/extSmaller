@@ -23,6 +23,10 @@ jobs:
           name: Initialization
           command: |
             make init
+      - run:
+          name: Add GOPATH
+          command: |
+            ls -al /go/src
       - save_cache:
           key: source-{{ checksum "Gopkg.toml" }}
           paths: 

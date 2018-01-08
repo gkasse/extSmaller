@@ -5,11 +5,18 @@ jobs:
       - image: golang:1.9.2
     working_directory: /go/src/github.com/gkasse/extSmaller
     steps:
+      - restore_cache:
+          keys:
+            - source-{{ checksum "Gopkg.toml" }}
       - checkout
       - run:
           name: Initialization
           command: |
             make init
+      - save_cache:
+          key: source-{{ checksum "Gopkg.toml" }}
+          paths: 
+            - "/go/src"
       - run:
           name: Do test
           command: |

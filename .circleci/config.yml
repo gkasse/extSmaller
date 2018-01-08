@@ -27,6 +27,7 @@ jobs:
           name: Add GOPATH
           command: |
             ls -al /go/src
+            ls -al /go/src/github.com/golang/dep/cmd/dep
       - save_cache:
           key: source-{{ checksum "Gopkg.toml" }}
           paths: 

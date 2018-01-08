@@ -8,6 +8,7 @@ jobs:
       - run:
           name: Add GOPATH
           command: |
+            go env
             ls -al /go/src
 #            echo "export GOPATH=" > ${BASH_ENV}
       - restore_cache:

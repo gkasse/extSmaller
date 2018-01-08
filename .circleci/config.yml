@@ -5,12 +5,6 @@ jobs:
       - image: golang:1.9.2
     working_directory: /go/src/github.com/gkasse/extSmaller
     steps:
-      - run:
-          name: Add GOPATH
-          command: |
-            go env
-            ls -al /go/src
-#            echo "export GOPATH=" > ${BASH_ENV}
       - restore_cache:
           keys:
             - source-{{ checksum "Gopkg.toml" }}
@@ -28,7 +22,7 @@ jobs:
           name: Add GOPATH
           command: |
             ls -al /go/src
-            ls -al /go/src/github.com/golang/dep/cmd/dep
+            ls -al /go/src/github.com/
       - save_cache:
           key: source-{{ checksum "Gopkg.toml" }}
           paths: 

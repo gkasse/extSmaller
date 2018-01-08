@@ -8,7 +8,8 @@ jobs:
       - run:
           name: Add GOPATH
           command: |
-            cat ${BASH_ENV}
+            ls -al /go/src
+#            echo "export GOPATH=" > ${BASH_ENV}
       - restore_cache:
           keys:
             - source-{{ checksum "Gopkg.toml" }}

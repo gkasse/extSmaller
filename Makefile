@@ -4,9 +4,7 @@ depExist := `which dep`
 
 # extSmaller use to dep to resolve libraries, therefore installed dep.
 init:
-ifeq ("$(depExist)", "")
 	go get -u github.com/golang/dep/cmd/dep
-endif
 	dep ensure
 
 test:

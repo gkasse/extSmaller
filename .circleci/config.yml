@@ -5,22 +5,20 @@ jobs:
       - image: golang:1.9.2
     working_directory: /go/src/github.com/gkasse/extSmaller
     steps:
-      - run:
-          name: Install dep
-          command: |
-            go get -u github.com/golang/dep/cmd/dep
       - checkout
-      - run: 
-          name: Resolving dependency
+      - run:
+          name: Initialization
           command: |
-            dep ensure
+            make init
       - run:
           name: Do test
           command: |
-            go test -v $(go list ./...)
-      - run:
-          name: Build for mac
-          command: |
-           GOOS=darwin GOARCH=amd64 go build extSmaller.go
+            make ci-test
       - store_artifacts:
-          path: ./extSmaller
+          path: ./out/coverage.html
+          when: always
+      - run:
+          name: Build
+          command: make build
+      - store_artifacts:
+          path: ./out/extSmaller*

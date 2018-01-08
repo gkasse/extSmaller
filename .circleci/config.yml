@@ -14,11 +14,9 @@ jobs:
           name: Do test
           command: |
             make ci-test
-      - store_artifacts:
-          path: ./out/coverage.html
-          when: always
       - run:
           name: Build
           command: make build
       - store_artifacts:
-          path: ./out/extSmaller*
+          path: ./out
+          when: always

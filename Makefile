@@ -19,7 +19,8 @@ ci-test:
 					rm profile.out; \
 			fi; \
 	done ; \
-	go tool cover -html=./out/coverage.txt -o=./out/coverage.html
+	go tool cover -html=./out/coverage.txt -o=./out/coverage.html; \
+	rm ./out/coverage.txt
 
 build:
 	for arch in $(ARCHS) ; do \

@@ -16,6 +16,10 @@ jobs:
             - source-
       - checkout
       - run:
+          name: Add GOPATH
+          command: |
+            ls -al /go/src
+      - run:
           name: Initialization
           command: |
             make init

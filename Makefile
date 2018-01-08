@@ -11,7 +11,7 @@ test:
 	go test -cover `go list ./...`
 
 ci-test:
-	touch ./out/coverage.txt ; \
+	install -D /dev/null ./out/coverage.txt; \
 	for d in `go list ./...`; do \
 			go test -coverprofile=profile.out -v $$d; \
 			if [ -f profile.out ]; then \
